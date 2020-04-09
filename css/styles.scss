@@ -179,10 +179,7 @@ header {
   #animated-submarine {
     width: 500px;
     cursor: pointer;
-    animation-name: makeMeDizzy;
-    animation-timing-function: linear;
-    animation-duration: 5s;
-    animation-iteration-count: infinite;
+    animation: makeMeDizzy linear 5s infinite;
   }
 
   @media (max-width: 750px) {
