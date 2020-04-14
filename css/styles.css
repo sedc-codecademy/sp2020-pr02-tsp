@@ -125,6 +125,7 @@ header #sub-to-home:hover {
 }
 
 .overlay .overlay-link {
+  width: 100%;
   padding: 8px;
   position: relative;
   text-decoration: none;
@@ -161,10 +162,6 @@ header #sub-to-home:hover {
   .overlay .overlay-link {
     font-size: 20px;
   }
-}
-
-.v-none {
-  visibility: hidden;
 }
 
 .filter-options {
@@ -342,6 +339,10 @@ footer p {
           animation-iteration-count: infinite;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
+}
+
+.v-none {
+  margin-left: calc(788%);
 }
 
 @-webkit-keyframes oscilate {

@@ -124,6 +124,7 @@ header {
   }
 
   .overlay-link {
+    width: 100%;
     padding: 8px;
     position: relative;
     text-decoration: none;
@@ -158,9 +159,6 @@ header {
   }
 }
 
-.v-none {
-  visibility: hidden;
-}
 .filter-options {
   box-shadow: 0 0 5px 0 getColor(box-shadow-color);
   .form-control {
@@ -313,6 +311,10 @@ footer {
   animation-timing-function: cubic-bezier(0.785, 0.135, 0.15, 0.86);
   animation-iteration-count: infinite;
   animation-fill-mode: forwards;
+}
+
+.v-none {
+  margin-left: calc(788%);
 }
 
 @keyframes oscilate {

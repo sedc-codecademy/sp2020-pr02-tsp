@@ -24,9 +24,10 @@ const saveCompany = company => {
 //Hamburger toggler
 
 const navbarBrand = document.querySelector('.navbar-brand');
+const submarineLogo = document.getElementById('img-logo-container');
 
 navbarBrand.addEventListener('click', () => {
-  document.getElementById('sub-to-home').classList.toggle('v-none');
+  submarineLogo.classList.toggle('v-none');
   const hamburgerLineTop = document.querySelector('.hamburger-line.top');
   const hamburgerLineBottom = document.querySelector('.hamburger-line.bottom');
   const overlay = document.querySelector('.overlay');
