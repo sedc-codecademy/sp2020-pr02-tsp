@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
 /* Extendable classes */
-.flex-column-center, .overlay .overlay-content, .main-section, aside, #login-screen, #login-screen .modal-wrapper .left-screen-gradient, #login-screen .modal-wrapper .right-screen {
+.flex-column-center, .overlay .overlay-content, .main-section, aside {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -241,104 +241,504 @@ footer p {
   color: black;
 }
 
-#login-screen {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+#loginRegister {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100vh;
+  margin: -20px 0 50px;
 }
 
-#login-screen .modal-wrapper {
-  height: 75%;
-  width: 65%;
-  -webkit-box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.3);
-          box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.3);
+.login-register h1 {
+  margin: 0;
+  padding: 30px;
+  font-size: 30px;
 }
 
-#login-screen .modal-wrapper .left-screen-gradient {
-  -webkit-box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.3);
-          box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.3);
-  background: -webkit-gradient(linear, left bottom, left top, from(#ffb997), to(#d47171));
-  background: linear-gradient(0deg, #ffb997 0%, #d47171 100%);
+.login-register a {
+  color: #333;
+  font-size: 14px;
+  text-decoration: none;
+  margin: 15px 0;
 }
 
-#login-screen .modal-wrapper .left-screen-gradient .btn {
-  color: #d47171;
-  font-size: 24px;
+.henlo {
+  position: relative;
+  overflow: hidden;
+  width: 750px;
+  max-width: 100%;
+  min-height: 480px;
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.288);
+          box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.288);
 }
 
-#login-screen .modal-wrapper .right-screen {
-  background-color: white;
-}
-
-#login-screen .modal-wrapper .right-screen form {
-  padding: 2rem;
-}
-
-#login-screen .modal-wrapper .right-screen form .label,
-#login-screen .modal-wrapper .right-screen form input {
-  display: block;
-}
-
-#login-screen .modal-wrapper .right-screen form .label {
+.form-container form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 0 40px;
+  height: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   text-align: center;
+  background: white;
 }
 
-#login-screen .modal-wrapper .right-screen form input {
-  padding: 10px;
-  border: 0;
-  border-bottom: 1px solid rgba(212, 113, 113, 0.7);
-}
-
-#login-screen .modal-wrapper .right-screen form input:focus {
+.form-container input {
   outline: none;
-  outline: 1px solid #d47171;
-  outline-offset: 2px;
+  padding: 10px 30px;
+  margin-bottom: 17px;
+  width: 100%;
+  outline: none;
+  border-radius: 5px;
+  border: 1px solid #ddddddd2;
+  font-size: 14px;
 }
 
-#login-screen .modal-wrapper .right-screen form .btn {
-  margin: auto;
-  display: block;
-  background-color: #d47171;
+.form-container input:focus {
+  -webkit-box-shadow: 0px 0px 1px 2px #a489785e;
+          box-shadow: 0px 0px 1px 2px #a489785e;
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+}
+
+.login-register button {
+  border-radius: 5px;
+  border: 1px solid #343a40e0;
+  background: #343a40e0;
   color: white;
-  font-size: 24px;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 12px 45px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  -webkit-transition: -webkit-transform 80ms ease-in;
+  transition: -webkit-transform 80ms ease-in;
+  transition: transform 80ms ease-in;
+  transition: transform 80ms ease-in, -webkit-transform 80ms ease-in;
 }
 
-#login-screen .modal-wrapper .right-screen form .btn:hover {
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
-  -webkit-box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.3);
-          box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.3);
-  background-color: white;
-  border: 1px solid #d47171;
-  color: #d47171;
+button.ghost {
+  background: transparent;
+  border-color: white;
 }
 
-#login-screen .modal-wrapper .right-screen a {
-  color: #d47171;
-}
-
-#login-screen::before {
-  content: '';
+.form-container {
   position: absolute;
-  top: 50%;
+  top: 0;
+  height: 100%;
+  -webkit-transition: all 0.6s ease-in-out;
+  transition: all 0.6s ease-in-out;
+}
+
+.login-container {
+  left: 0;
+  width: 50%;
+  z-index: 2;
+}
+
+.register-container {
+  left: 0;
+  width: 50%;
+  opacity: 0;
+  z-index: 1;
+}
+
+.overlay-container {
+  position: absolute;
+  top: 0;
   left: 50%;
-  width: 500px;
-  height: 2px;
-  background-color: #d47171;
-  -webkit-animation-name: oscilate;
-          animation-name: oscilate;
-  -webkit-animation-duration: 10s;
-          animation-duration: 10s;
-  -webkit-animation-timing-function: cubic-bezier(0.785, 0.135, 0.15, 0.86);
-          animation-timing-function: cubic-bezier(0.785, 0.135, 0.15, 0.86);
-  -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+  -webkit-transition: -webkit-transform 0.6s ease-in-out;
+  transition: -webkit-transform 0.6s ease-in-out;
+  transition: transform 0.6s ease-in-out;
+  transition: transform 0.6s ease-in-out, -webkit-transform 0.6s ease-in-out;
+  z-index: 100;
+}
+
+.overlay-wrapper {
+  position: relative;
+  background: #343a40e0;
+  background: linear-gradient(163deg, #666666 0%, #343a40 42%);
+  color: white;
+  left: -100%;
+  height: 100%;
+  width: 200%;
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+  -webkit-transition: -webkit-transform 0.6s ease-in-out;
+  transition: -webkit-transform 0.6s ease-in-out;
+  transition: transform 0.6s ease-in-out;
+  transition: transform 0.6s ease-in-out, -webkit-transform 0.6s ease-in-out;
+}
+
+.overlay-panel {
+  position: absolute;
+  top: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  padding: 0 40px;
+  height: 100%;
+  width: 50%;
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+  -webkit-transition: -webkit-transform 0.6s ease-in-out;
+  transition: -webkit-transform 0.6s ease-in-out;
+  transition: transform 0.6s ease-in-out;
+  transition: transform 0.6s ease-in-out, -webkit-transform 0.6s ease-in-out;
+}
+
+.overlay-register {
+  right: 0;
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+
+.overlay-login {
+  -webkit-transform: translateX(-20%);
+          transform: translateX(-20%);
+}
+
+.login-register.panel-active .login-container {
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+}
+
+.login-register.panel-active .overlay-container {
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+}
+
+.login-register.panel-active .register-container {
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+  opacity: 1;
+  z-index: 5;
+}
+
+.login-register.panel-active .overlay-wrapper {
+  -webkit-transform: translateX(50%);
+          transform: translateX(50%);
+}
+
+.login-register.panel-active .overlay-login {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+
+.login-register.panel-active .overlay-register {
+  -webkit-transform: translateX(20%);
+          transform: translateX(20%);
+}
+
+@media only screen and (max-width: 700px) {
+  #loginRegister {
+    margin: 0;
+  }
+  .henlo {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    min-height: 500px;
+  }
+  .login-register {
+    height: 100%;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+  .form-container {
+    position: relative;
+    height: 50%;
+  }
+  .form-container form {
+    width: 100%;
+    background-color: white;
+  }
+  .form-container input {
+    margin-bottom: 10px;
+  }
+  .overlay-container {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    height: 50%;
+    overflow: hidden;
+    z-index: 100;
+    -webkit-transition: -webkit-transform 0.6s ease-in-out;
+    transition: -webkit-transform 0.6s ease-in-out;
+    transition: transform 0.6s ease-in-out;
+    transition: transform 0.6s ease-in-out, -webkit-transform 0.6s ease-in-out;
+  }
+  .overlay-wrapper {
+    position: relative;
+    color: #fff;
+    background: #343a40e0;
+    background: linear-gradient(163deg, #666666 0%, #343a40 42%);
+    width: 100%;
+    height: 200%;
+    top: -100%;
+    left: unset;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    -webkit-transition: -webkit-transform 0.6s ease-in-out;
+    transition: -webkit-transform 0.6s ease-in-out;
+    transition: transform 0.6s ease-in-out;
+    transition: transform 0.6s ease-in-out, -webkit-transform 0.6s ease-in-out;
+  }
+  .overlay-panel {
+    position: absolute;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    text-align: center;
+    left: 0;
+    top: unset;
+    width: 100%;
+    height: 50%;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    -webkit-transition: -webkit-transform 0.6s ease-in-out;
+    transition: -webkit-transform 0.6s ease-in-out;
+    transition: transform 0.6s ease-in-out;
+    transition: transform 0.6s ease-in-out, -webkit-transform 0.6s ease-in-out;
+  }
+  .register-container {
+    opacity: 0;
+    z-index: 1;
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+    bottom: unset;
+    width: unset;
+  }
+  .login-container {
+    left: unset;
+    width: unset;
+    z-index: 2;
+  }
+  .overlay-register {
+    bottom: 0;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  .overlay-login {
+    -webkit-transform: translateY(-20%);
+            transform: translateY(-20%);
+  }
+  .login-register.panel-active .login-container {
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%);
+  }
+  .login-register.panel-active .overlay-container {
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+  }
+  .login-register.panel-active .register-container {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+    z-index: 5;
+  }
+  .login-register.panel-active .overlay-wrapper {
+    -webkit-transform: translateY(50%);
+            transform: translateY(50%);
+  }
+  .login-register.panel-active .overlay-login {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  .login-register.panel-active .overlay-register {
+    -webkit-transform: translateY(20%);
+            transform: translateY(20%);
+  }
+}
+
+.main-contact {
+  height: 450px;
+  max-width: 900px;
+  margin: 8% auto;
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.288);
+          box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.288);
+}
+
+.main-contact .contact-form {
+  width: 65%;
+  float: left;
+}
+
+.contact-form form {
+  width: 85%;
+  margin: auto;
+}
+
+.contact-form h1 {
+  text-align: center;
+  padding: 30px;
+  font-size: 30px;
+  color: #343a40;
+}
+
+.contact-form form input,
+.contact-form form textarea {
+  display: block;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 5px 0 17px 0;
+  padding: 10px 30px;
+  outline: none;
+  border-radius: 5px;
+  border: 1px solid #ddddddd2;
+  font-size: 14px;
+}
+
+.contact-form form input:focus,
+.contact-form form textarea:focus {
+  -webkit-box-shadow: 0px 0px 1px 2px #a489785e;
+          box-shadow: 0px 0px 1px 2px #a489785e;
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+}
+
+.contact-form form input::-webkit-input-placeholder,
+.contact-form form textarea::-webkit-input-placeholder {
+  font-size: 12px;
+}
+
+.contact-form form input:-ms-input-placeholder,
+.contact-form form textarea:-ms-input-placeholder {
+  font-size: 12px;
+}
+
+.contact-form form input::-ms-input-placeholder,
+.contact-form form textarea::-ms-input-placeholder {
+  font-size: 12px;
+}
+
+.contact-form form input::placeholder,
+.contact-form form textarea::placeholder {
+  font-size: 12px;
+}
+
+.contact-form-btn {
+  border-radius: 5px;
+  border: 1px solid #343a40e0;
+  background: #343a40e0;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 10px 40px;
+  margin-bottom: 25px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  -webkit-transition: -webkit-transform 80ms ease-in;
+  transition: -webkit-transform 80ms ease-in;
+  transition: transform 80ms ease-in;
+  transition: transform 80ms ease-in, -webkit-transform 80ms ease-in;
+}
+
+.main-contact .contact-address {
+  float: right;
+  width: 35%;
+  height: 450px;
+  background: #666666;
+  background: linear-gradient(163deg, #666666 0%, #343a40 42%);
+}
+
+.contact-address .content {
+  color: #dddddd;
+  padding: 30px;
+}
+
+.content h1 {
+  font-size: 30px;
+  padding-bottom: 60px;
+}
+
+.content p {
+  padding-top: 20px;
+  font-size: 14px;
+}
+
+@media only screen and (max-width: 600px) {
+  .main-contact {
+    height: unset;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+  .main-contact .contact-form {
+    width: 100%;
+    float: unset;
+  }
+  .main-contact .contact-address {
+    float: unset;
+    width: 100%;
+    height: 140px;
+  }
+  .contact-address .content {
+    padding: 23px;
+    text-align: center;
+  }
+  .content h1 {
+    display: none;
+  }
+  .content p {
+    padding: unset;
+  }
 }
 
 .v-none {
