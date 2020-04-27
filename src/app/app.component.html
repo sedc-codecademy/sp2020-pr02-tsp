@@ -1,0 +1,11 @@
+<header>
+  <app-navbar (openModal)="openModalFunction($event)"></app-navbar>
+</header>
+<main [@routeAnimations]="prepareRoute(outlet)">
+  <router-outlet #outlet="outlet"></router-outlet>
+</main>
+<footer>
+  <app-footer></app-footer>
+</footer>
+
+<app-login (clMod)="closeModal($event)" *ngIf="shouldModalOpen"></app-login>

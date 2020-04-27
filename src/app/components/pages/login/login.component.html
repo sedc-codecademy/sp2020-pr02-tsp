@@ -1,0 +1,82 @@
+<main class="henlo" *ngIf="!isLoggedIn">
+  <div class="login-register" id="logiRegiContainer" #logiRegi>
+    <div class="form-container register-container">
+      <form [formGroup]="registerForm" (ngSubmit)="onRegisterFormSubmit()">
+        <h1>Register</h1>
+        <input
+          type="email"
+          formControlName="registerEmail"
+          required
+          placeholder="Email"
+        />
+        <input
+          formControlName="registerPassword"
+          type="password"
+          required
+          id="passwordInput"
+          placeholder="Password"
+        />
+        <button [disabled]="!registerForm.valid" class="btn btn-dark">
+          Register
+        </button>
+      </form>
+    </div>
+    <div class="form-container login-container">
+      <form [formGroup]="loginForm" (ngSubmit)="onLoginFormSubmit()">
+        <h1>Log in</h1>
+        <input
+          type="email"
+          formControlName="email"
+          required
+          placeholder="Email"
+        />
+        <input
+          type="password"
+          formControlName="password"
+          required
+          placeholder="Password"
+        />
+        <a href="#">Forgot your password?</a>
+        <button class="btn btn-dark" [disabled]="!loginForm.valid">
+          Log in
+        </button>
+      </form>
+    </div>
+    <div class="overlay-container">
+      <div class="overlay-wrapper">
+        <div class="overlay-panel overlay-login">
+          <h1>Welcome Back</h1>
+          <!-- login-btn -->
+          <button id="login" (click)="triggerLogin()" class="ghost">
+            Log in
+          </button>
+          <!-- /login-btn -->
+        </div>
+        <div class="overlay-panel overlay-register">
+          <h1>Don't have an account yet?</h1>
+          <!-- register-btn -->
+          <button id="register" (click)="triggerRegister()" class="ghost">
+            Register
+          </button>
+          <!-- /register-btn -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <i class="fa fa-times" (click)="closeModal()"></i>
+</main>
+
+<section *ngIf="isLoggedIn">
+  <div class="card">
+    <div class="card-header">
+      <h6 class="acc-header">Account controls</h6>
+      <i class="fa fa-times white-icon" (click)="closeModal()"></i>
+    </div>
+    <div class="card-body">
+      <a [routerLink]="['/my-account']" class="btn btn-dark mr-2">My Account</a>
+      <button class="btn btn-danger" (click)="logOut()">
+        Log Out
+      </button>
+    </div>
+  </div>
+</section>

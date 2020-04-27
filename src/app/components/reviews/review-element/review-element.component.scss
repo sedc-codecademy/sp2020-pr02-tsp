@@ -1,0 +1,54 @@
+@import '../../../../assets/scss_extendables/index';
+
+.review-container {
+  box-shadow: 5px 3px 3px 0 rgba(0, 0, 0, 0.4);
+  width: 100%;
+  border: 1px solid #2c3e50;
+}
+
+.card-aside {
+  background-color: #dfe6e9;
+  .img-container {
+    .img-fluid {
+      width: 150px;
+      padding: 10px;
+    }
+  }
+  p.text-center.my-2.font-italic {
+    color: rgba(0, 0, 0, 0.4);
+  }
+}
+
+.card {
+  flex: 1;
+  border: 0;
+  border-radius: 0px !important;
+}
+
+.card-header:first-child {
+  border-radius: 0px !important;
+}
+
+.card-header {
+  // background: linear-gradient(163deg, #2d3436, #2c3e50);
+  background: linear-gradient(163deg, #444a50 0%, #2c3e50 80%);
+  .card-title {
+    font-size: 30px;
+    margin: 0;
+    text-decoration: none;
+    @extend .animatedBefore;
+  }
+}
+
+.card-body {
+  button.see-more-btn {
+    width: 100px;
+  }
+  background: linear-gradient(163deg, #444a50 0%, #2c3e50 80%);
+  color: whitesmoke;
+  .votes-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+}
