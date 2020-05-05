@@ -2,7 +2,9 @@
   <form [formGroup]="inputForm" class="d-flex flex-column container div1">
     <!-- Company Input -->
     <mat-form-field class="mt-4">
-      <mat-label>Company</mat-label>
+      <mat-label>
+        {{ 'MY_ACCOUNT.COMPANY' | translate }}
+      </mat-label>
       <mat-select formControlName="companyName">
         <mat-option *ngFor="let company of companies" [value]="company.name">
           {{ company.name }}
@@ -11,17 +13,27 @@
     </mat-form-field>
     <!-- Company Rating -->
     <mat-form-field class="mt-3">
-      <mat-label>Rating</mat-label>
+      <mat-label>
+        {{ 'MY_ACCOUNT.RATING' | translate }}
+      </mat-label>
       <input matInput type="number" formControlName="rating" />
     </mat-form-field>
     <!-- Review Text -->
     <mat-form-field>
-      <mat-label>Write Something...</mat-label>
-      <textarea matInput formControlName="textExcerpt" cols="30" rows="10">
+      <mat-label>
+        {{ 'MY_ACCOUNT.DESCRIPTION' | translate }}
+      </mat-label>
+      <textarea
+        matInput
+        style="resize: none;"
+        formControlName="textExcerpt"
+        cols="30"
+        rows="10"
+      >
       </textarea>
     </mat-form-field>
     <button [disabled]="!inputForm.valid" mat-raised-button (click)="create()">
-      Submit
+      {{ 'MY_ACCOUNT.SUBMIT_BTN' | translate }}
     </button>
   </form>
 
@@ -31,52 +43,74 @@
   >
     <!-- Linkedin Account -->
     <mat-form-field class="mt-3">
-      <mat-label>Linkedin Acocunt</mat-label>
+      <mat-label>
+        {{ 'MY_ACCOUNT.LINKEDIN' | translate }}
+      </mat-label>
       <input matInput formControlName="linkedInAccount" />
     </mat-form-field>
-    <button mat-raised-button color="accent">Connect!</button>
+    <button (click)="requestVerification()" mat-raised-button color="accent">
+      {{ 'MY_ACCOUNT.CONNECT_BTN' | translate }}
+    </button>
     <hr />
 
     <!--Change Email-->
     <mat-form-field class="mt-3">
-      <mat-label>Email</mat-label>
+      <mat-label>
+        {{ 'MY_ACCOUNT.EMAIL' | translate }}
+      </mat-label>
       <input matInput formControlName="changeEmailInput" />
     </mat-form-field>
-    <button mat-raised-button color="accent">Change Email</button>
+    <button (click)="changeEmail()" mat-raised-button color="accent">
+      {{ 'MY_ACCOUNT.EMAIL_BTN' | translate }}
+    </button>
     <hr />
 
     <!--Change Password-->
     <mat-form-field class="mt-3">
-      <mat-label>Old Password</mat-label>
-      <input matInput formControlName="oldPassword" />
+      <mat-label>
+        {{ 'MY_ACCOUNT.OLD_PASS' | translate }}
+      </mat-label>
+      <input matInput formControlName="newPassword" type="password" />
     </mat-form-field>
 
     <mat-form-field class="mt-3">
-      <mat-label>New Password</mat-label>
-      <input matInput formControlName="newPassword" />
+      <mat-label>
+        {{ 'MY_ACCOUNT.NEW_PASS' | translate }}
+      </mat-label>
+      <input matInput formControlName="newPasswordConfirm" type="password" />
     </mat-form-field>
-    <button mat-raised-button color="accent">Change Password</button>
+    <button (click)="updatePassword()" mat-raised-button color="accent">
+      {{ 'MY_ACCOUNT.CHANGE_PASS_BTN' | translate }}
+    </button>
     <hr />
+
     <!-- Notifications control -->
     <!-- company notifications -->
     <mat-form-field>
-      <mat-label>Companies</mat-label>
+      <mat-label>
+        {{ 'MY_ACCOUNT.COMPANIES' | translate }}
+      </mat-label>
       <mat-select formControlName="multipleCompanies" multiple>
         <mat-option *ngFor="let company of companies" [value]="company.name">{{
           company.name
         }}</mat-option>
       </mat-select>
     </mat-form-field>
-    <mat-checkbox formControlName="myCompanyNotifications"
-      >Notify me when a company is reviewed</mat-checkbox
-    >
-    <mat-checkbox formControlName="companyAddedNotification"
-      >Notify me when a company is added</mat-checkbox
-    >
+    <mat-checkbox formControlName="myCompanyNotifications">{{
+      'MY_ACCOUNT.COMPANY_REVIEWED_NOT' | translate
+    }}</mat-checkbox>
+    <mat-checkbox formControlName="companyAddedNotification">{{
+      'MY_ACCOUNT.COMPANY_ADD_NOT' | translate
+    }}</mat-checkbox>
     <hr />
     <!--Forgot Password -->
-    <button class="mt-4" mat-raised-button color="warn">
-      Forgot Password!
+    <button
+      (click)="forgotPasswordDialog()"
+      class="mt-4"
+      mat-raised-button
+      color="accent"
+    >
+      {{ 'MY_ACCOUNT.FORGOT_PASS_BTN' | translate }}
     </button>
   </form>
 

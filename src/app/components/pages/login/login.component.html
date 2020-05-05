@@ -2,61 +2,71 @@
   <div class="login-register" id="logiRegiContainer" #logiRegi>
     <div class="form-container register-container">
       <form [formGroup]="registerForm" (ngSubmit)="onRegisterFormSubmit()">
-        <h1>Register</h1>
+        <h1>
+          {{ 'LOGIN.REGISTER' | translate }}
+        </h1>
         <input
           type="email"
           formControlName="registerEmail"
           required
-          placeholder="Email"
+          placeholder="{{ 'LOGIN.EMAIL' | translate }}"
         />
         <input
           formControlName="registerPassword"
           type="password"
           required
           id="passwordInput"
-          placeholder="Password"
+          placeholder="{{ 'LOGIN.PASSWORD' | translate }}"
         />
         <button [disabled]="!registerForm.valid" class="btn btn-dark">
-          Register
+          {{ 'LOGIN.REGISTER' | translate }}
         </button>
       </form>
     </div>
     <div class="form-container login-container">
       <form [formGroup]="loginForm" (ngSubmit)="onLoginFormSubmit()">
-        <h1>Log in</h1>
+        <h1>
+          {{ 'LOGIN.LOGIN' | translate }}
+        </h1>
         <input
           type="email"
           formControlName="email"
           required
-          placeholder="Email"
+          placeholder="{{ 'LOGIN.EMAIL' | translate }}"
         />
         <input
           type="password"
           formControlName="password"
           required
-          placeholder="Password"
+          placeholder="{{ 'LOGIN.PASSWORD' | translate }}"
         />
-        <a href="#">Forgot your password?</a>
+        <a href="#">
+          {{ 'LOGIN.FORGOT_PASS' | translate }}
+        </a>
         <button class="btn btn-dark" [disabled]="!loginForm.valid">
-          Log in
+          {{ 'LOGIN.LOGIN' | translate }}
         </button>
       </form>
     </div>
     <div class="overlay-container">
       <div class="overlay-wrapper">
         <div class="overlay-panel overlay-login">
-          <h1>Welcome Back</h1>
+          <h1>
+            {{ 'LOGIN.LOGI_DESCRIPTION' | translate }}
+          </h1>
           <!-- login-btn -->
           <button id="login" (click)="triggerLogin()" class="ghost">
-            Log in
+            {{ 'LOGIN.LOGIN' | translate }}
           </button>
           <!-- /login-btn -->
         </div>
         <div class="overlay-panel overlay-register">
-          <h1>Don't have an account yet?</h1>
+          <h1>
+            {{ 'LOGIN.REGI_DESCRIPTION' | translate }}
+          </h1>
           <!-- register-btn -->
           <button id="register" (click)="triggerRegister()" class="ghost">
-            Register
+            {{ 'LOGIN.REGISTER' | translate }}
           </button>
           <!-- /register-btn -->
         </div>
@@ -69,13 +79,15 @@
 <section *ngIf="isLoggedIn">
   <div class="card">
     <div class="card-header">
-      <h6 class="acc-header">Account controls</h6>
+      <h6 class="acc-header">{{ 'LOGIN.ACC_CONTROLS' | translate }}</h6>
       <i class="fa fa-times white-icon" (click)="closeModal()"></i>
     </div>
     <div class="card-body">
-      <a [routerLink]="['/my-account']" class="btn btn-dark mr-2">My Account</a>
+      <a [routerLink]="['/my-account']" class="btn btn-dark mr-2">{{
+        'HEADER.MY_ACCOUNT' | translate
+      }}</a>
       <button class="btn btn-danger" (click)="logOut()">
-        Log Out
+        {{ 'LOGIN.LOG_OUT' | translate }}
       </button>
     </div>
   </div>

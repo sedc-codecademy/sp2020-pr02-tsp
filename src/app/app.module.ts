@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/layout/navbar/navbar.component';
@@ -11,7 +10,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './modules/material/material.module';
 import { ContactComponent } from './components/pages/contact/contact.component';
 import { LoginComponent } from './components/pages/login/login.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
 import { environment } from '../environments/environment';
 // <Firebase Imports>
@@ -23,14 +22,22 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ReviewElementComponent } from './components/reviews/review-element/review-element.component';
 import { MyAccountComponent } from './components/pages/my-account/my-account.component';
 import { CompaniesComponent } from './components/pages/companies/companies.component';
-import { MatGridListModule } from '@angular/material/grid-list';
-import { MatCardModule } from '@angular/material/card';
-import { MatMenuModule } from '@angular/material/menu';
-import { MatIconModule } from '@angular/material/icon';
-import { MatButtonModule } from '@angular/material/button';
 import { LayoutModule } from '@angular/cdk/layout';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { AdminPanelComponent } from './components/pages/admin-panel/admin-panel.component';
+import { HttpLoaderComponent } from './shared/http-loader/http-loader.component';
+import { TermsOfServiceComponent } from './components/pages/terms-of-service/terms-of-service.component';
+import { VotesContainerComponent } from './components/reviews/votes-container/votes-container.component';
+import { ConfirmationDialogComponent } from './shared/confirmation-dialog/confirmation-dialog.component';
+import { FourOhFourComponent } from './components/pages/four-oh-four/four-oh-four.component';
+import { FullListComponent } from './components/reviews/full-list/full-list.component';
+import { ReviewFullComponent } from './components/reviews/review-full/review-full.component';
+
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+}
 
 @NgModule({
   declarations: [
@@ -45,6 +52,13 @@ import { AdminPanelComponent } from './components/pages/admin-panel/admin-panel.
     MyAccountComponent,
     CompaniesComponent,
     AdminPanelComponent,
+    HttpLoaderComponent,
+    TermsOfServiceComponent,
+    VotesContainerComponent,
+    ConfirmationDialogComponent,
+    FourOhFourComponent,
+    FullListComponent,
+    ReviewFullComponent
   ],
   imports: [
     BrowserModule,
@@ -58,15 +72,17 @@ import { AdminPanelComponent } from './components/pages/admin-panel/admin-panel.
     FormsModule,
     ReactiveFormsModule,
     AngularFireDatabaseModule,
-    MatGridListModule,
-    MatCardModule,
-    MatMenuModule,
-    MatIconModule,
-    MatButtonModule,
     LayoutModule,
     NgbModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      }
+    })
   ],
   providers: [],
-  bootstrap: [AppComponent],
+  bootstrap: [AppComponent]
 })
 export class AppModule {}

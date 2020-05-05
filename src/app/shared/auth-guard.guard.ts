@@ -1,39 +1,41 @@
 import { Injectable } from '@angular/core';
-import { Router, CanActivate } from '@angular/router';
-import { AuthService } from './auth.service';
+import {
+  Router,
+  CanActivate,
+  RouterStateSnapshot,
+  ActivatedRouteSnapshot
+} from '@angular/router';
+import { AngularFireAuth } from '@angular/fire/auth';
 import { ToastrService } from 'ngx-toastr';
+import { TranslateService } from '@ngx-translate/core';
+import { AuthService } from './auth.service';
+import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
 export class AuthGuardGuard implements CanActivate {
   constructor(
+    private af: AngularFireAuth,
     private router: Router,
-    private authService: AuthService,
-    private toastr: ToastrService
+    private toastrService: ToastrService,
+    private translateService: TranslateService,
+    private authService: AuthService
   ) {}
-  async canActivate() {
-    //   if (await this.authService.authStateTrack()) {
-    //     console.log('MOZES DA VLEZES ANGELU!');
-    //     return true;
-    //   } else {
-    //     console.log('ZASTANI ZAD MENE SATANO!');
-    //     this.router.navigate(['/']);
-    //     return false;
-    //   }
-    // }
 
-    const state = await this.authService.authStateTrack();
-    if (state.logged) {
-      if (state.verified) {
-        return true;
-      } else {
-        this.toastr.error('You must verify your account before continuing!');
-        return false;
-      }
-    } else {
-      this.toastr.error('You are not logged in!');
-      return false;
-    }
+  canActivate(
+    next: ActivatedRouteSnapshot,
+    state: RouterStateSnapshot
+  ): boolean | Observable<boolean> | Promise<boolean> {
+    return new Promise((resolve, reject) => {
+      this.af.onAuthStateChanged((user: firebase.User) => {
+        if (user) {
+          resolve(true);
+        } else {
+          this.router.navigate(['/']);
+          resolve(false);
+        }
+      });
+    });
   }
 }

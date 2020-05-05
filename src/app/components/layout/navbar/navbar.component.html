@@ -1,9 +1,9 @@
 <mat-toolbar class="navbar d-flex" color="warn">
-  <div #navBrand class="navbar-brand" (click)="toggleOverlay()">
+  <div #navBrand class="navbar-brand mt-2" (click)="toggleOverlay()">
     <span #hamTop class="hamburger-line top"></span>
     <span #hamBot class="hamburger-line bottom"></span>
   </div>
-  <div class="img-logo d-none d-lg-block">
+  <div class="img-logo">
     <a [routerLink]="['/']" id="img-logo-container" #subLogo>
       <img
         src="/assets/submarine.png"
@@ -13,33 +13,51 @@
       />
     </a>
   </div>
-  <i class="fa fa-user" id="fa-fa-user" (click)="triggerModal()"></i>
+  <div class="d-flex">
+    <div class="mr-4">
+      <select
+        #langSelectEl
+        [value]="val"
+        name="languages"
+        id="langSelect"
+        class="custom-select"
+        style="cursor: pointer;"
+        (change)="changeLanguage($event.target.value)"
+      >
+        <option value="English" style="cursor: pointer;">en</option>
+        <option value="Macedonian" style="cursor: pointer;">мк</option>
+      </select>
+    </div>
+    <i class="fa fa-user" id="fa-fa-user" (click)="triggerModal()"></i>
+  </div>
 </mat-toolbar>
 <div class="overlay" #overlay>
   <div class="overlay-content">
     <a [routerLink]="['/']" class="overlay-link" (click)="toggleOverlay()"
-      ><i class="fa fa-home mr-2"></i>Home</a
+      ><i class="fa fa-home mr-2"></i>{{ 'HEADER.HOME' | translate }}</a
     >
     <a
       [routerLink]="['/my-account']"
       class="overlay-link"
+      *ngIf="activeUser"
       (click)="checkMyAccount()"
-      ><i class="fa fa-user mr-2"></i>My Account</a
+      ><i class="fa fa-user mr-2"></i>{{ 'HEADER.MY_ACCOUNT' | translate }}</a
     >
     <a
       [routerLink]="['/companies']"
       class="overlay-link"
       (click)="toggleOverlay()"
-      ><i class="fa fa-building-o mr-2"></i>Companies</a
+      ><i class="fa fa-building-o mr-2"></i
+      >{{ 'HEADER.COMPANIES' | translate }}</a
     >
     <a [routerLink]="['/about']" class="overlay-link" (click)="toggleOverlay()"
-      ><i class="fa fa-question mr-2"></i>About</a
+      ><i class="fa fa-question mr-2"></i>{{ 'HEADER.ABOUT' | translate }}</a
     >
     <a
       [routerLink]="['/contact']"
       class="overlay-link"
       (click)="toggleOverlay()"
-      ><i class="fa fa-phone mr-2"></i>Contact</a
+      ><i class="fa fa-phone mr-2"></i>{{ 'HEADER.CONTACT' | translate }}</a
     >
   </div>
 </div>
