@@ -1,7 +1,15 @@
-<button type="button" class="btn fa fa-arrow-up" (click)="upvoteBtn()"></button>
-<p class="d-block text-white">{{ kosovoContainer }}</p>
+<button
+  type="button"
+  [disabled]="upvoteBlocked"
+  class="btn fa fa-arrow-up"
+  (click)="upvoteBtn()"
+></button>
+<p class="d-block text-white text-center mb-0">
+  {{ upvoteList.length - downvoteList.length }}
+</p>
 <button
   type="button"
   class="btn fa fa-arrow-down"
   (click)="downvoteBtn()"
+  [disabled]="downvoteBlocked"
 ></button>

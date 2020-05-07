@@ -19,6 +19,14 @@ export class ReviewService {
     return this.firestore.collection('reviews').doc(id).get();
   }
 
+  getReviewsForCompany(companyName: string) {
+    return this.firestore
+      .collection('reviews', (ref) =>
+        ref.where('companyName', '==', companyName)
+      )
+      .snapshotChanges();
+  }
+
   postReview(review: Review) {
     return this.firestore.collection('reviews').add(review);
   }
@@ -36,7 +44,17 @@ export class ReviewService {
 
   getUpvotes(reviewId: string) {
     return this.firestore
-      .collection(`reviews/${reviewId}/upvotes`)
+      .collection(`reviews/${reviewId}/upvotes`, (ref) =>
+        ref.where('upvote', '==', 1)
+      )
+      .snapshotChanges();
+  }
+
+  getDownvotes(reviewId: string) {
+    return this.firestore
+      .collection(`reviews/${reviewId}/upvotes`, (ref) =>
+        ref.where('upvote', '==', -1)
+      )
       .snapshotChanges();
   }
 
