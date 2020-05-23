@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Review } from './Review.model';
 import { NgbRatingConfig } from '@ng-bootstrap/ng-bootstrap';
 import { ReviewService } from '../../../shared/review.service';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-review-element',
@@ -23,18 +24,20 @@ import { ReviewService } from '../../../shared/review.service';
       .filled.bad {
         color: #ff1e1e;
       }
-    `,
-  ],
+    `
+  ]
 })
 export class ReviewElementComponent implements OnInit {
+  formattedDate = '';
   @Input() reviewElement: any;
   public currentRate: number;
   public reviewId: string;
-  constructor(config: NgbRatingConfig, reviewService: ReviewService) {
+  constructor(config: NgbRatingConfig, private reviewService: ReviewService) {
     config.readonly = true;
   }
 
   ngOnInit(): void {
+    this.formattedDate = this.reviewService.formatDate(this.reviewElement);
     this.currentRate = this.reviewElement.data.rating;
   }
 }
