@@ -28,6 +28,8 @@ import { ClickOutsideModule } from 'ng-click-outside';
 import { CompanyModule } from './modules/company/company.module';
 import { ReviewModule } from './modules/review/review.module';
 import { SharedModule } from './modules/shared/shared.module';
+import { LandingPageComponent } from './components/pages/landing-page/landing-page.component';
+import { ScrollingModule } from '@angular/cdk/scrolling';
 
 @NgModule({
   declarations: [
@@ -42,12 +44,14 @@ import { SharedModule } from './modules/shared/shared.module';
     AdminPanelComponent,
     HttpLoaderComponent,
     TermsOfServiceComponent,
-    FourOhFourComponent
+    FourOhFourComponent,
+    LandingPageComponent
   ],
   imports: [
     SharedModule,
     CompanyModule,
     ReviewModule,
+    ScrollingModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
