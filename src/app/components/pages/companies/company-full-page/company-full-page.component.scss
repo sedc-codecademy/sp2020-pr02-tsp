@@ -7,6 +7,9 @@ section {
   h1 {
     color: var(--font-color);
   }
+  p {
+    margin: 0;
+  }
   p,
   a {
     font-size: 20px;
@@ -22,7 +25,9 @@ section {
   }
 
   h1 {
+    position: relative;
     font-size: 52px;
+    padding-bottom: 10px;
     @include mediumPhoneMixin {
       font-size: 32px;
     }
@@ -40,11 +45,15 @@ section {
   width: 150px;
 }
 
-.main-body {
-  flex-grow: 1;
+.company-info {
+  position: relative;
+  padding-bottom: 25px;
 }
 
 .main-aside {
+  p {
+    margin: 1rem 0;
+  }
   @extend .flex-column-center;
   border: 1px solid var(--font-color);
   margin-left: 5rem;
@@ -79,6 +88,9 @@ section {
     overflow: hidden;
     @include mediumPhoneMixin {
       width: 100%;
+    }
+    a.d-block.mx-auto {
+      width: 150px;
     }
   }
 }
