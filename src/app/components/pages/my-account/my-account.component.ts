@@ -86,6 +86,10 @@ export class MyAccountComponent implements OnInit, OnDestroy {
       }
       review.userName = e.email;
       review.reportCounter = 0;
+<<<<<<< HEAD
+
+=======
+>>>>>>> master
       this.reviewService
         .postReview(review)
         .then((response) => {
@@ -123,7 +127,6 @@ export class MyAccountComponent implements OnInit, OnDestroy {
       this.toastr.error(this.toastrMessages.LINKEDIN, this.toastrMessages.OOPS);
     }
   }
-
   changeEmail() {
     const email = this.accountChangesForm.value.changeEmailInput;
     if (!email) {
@@ -216,11 +219,15 @@ export class MyAccountComponent implements OnInit, OnDestroy {
     const companyName = '';
     const rating = '';
     const textExcerpt = '';
+    const reviewPros = '';
+    const reviewCons = '';
 
     this.inputForm = new FormGroup({
       companyName: new FormControl(companyName),
       rating: new FormControl(rating, Validators.required),
       textExcerpt: new FormControl(textExcerpt, Validators.required),
+      reviewPros: new FormControl(reviewPros),
+      reviewCons: new FormControl(reviewCons),
     });
 
     // Account Changes Form

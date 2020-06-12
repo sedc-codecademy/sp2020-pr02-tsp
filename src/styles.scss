@@ -1,5 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
-@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+
 @import 'app/shared/material-theme.scss';
 @import '~bootstrap/scss/bootstrap';
 
@@ -7,12 +7,18 @@
   box-sizing: border-box;
 }
 
+@font-face {
+  font-family: 'Roboto';
+  src: url('https://fonts.googleapis.com/css?family=Roboto:300,400,500');
+}
+
 :root {
-  --primary: #2c3e50;
+  --primary: #000617;
   --secondary: #2d3436;
   --tertiary: #a489785e;
   --accent: #212121;
   --warn: #dc3545;
+  --nephritis: #27ae60;
   --shadows: rgba(0, 0, 0, 0.4);
   --shadowsOpacified: rgba(0, 0, 0, 0.8);
   --outlines: #ddddddd2;
@@ -22,14 +28,15 @@
   --gradient-one-faded: #516488;
   --gradient-two: rgba(48, 51, 65, 1);
   --opacity1: none;
-  --opacity2: .4;
+  --opacity2: 0.4;
+  --header: #00657e;
 }
 
 html,
 body {
   margin: 0;
   scroll-behavior: smooth;
-  font-family: 'Monsterrat', sans-serif;
+  font-family: 'Roboto', sans-serif !important;
   height: 100%;
   overflow-x: hidden;
   body::-webkit-scrollbar {
@@ -45,4 +52,32 @@ body {
     background-color: #212121;
     outline: 1px solid #212121;
   }
+}
+
+.owl-dots {
+  display: flex;
+  justify-content: center;
+  .fa {
+    margin-right: 16px;
+  }
+}
+
+.owl-nav {
+  .owl-prev,
+  .owl-next {
+    position: absolute;
+    top: 37%;
+  }
+
+  .owl-next {
+    right: 0;
+  }
+}
+i.carousel-fa {
+  font-size: 32px;
+}
+
+i.fa.carousel-fa.fa-chevron-left,
+i.fa.carousel-fa.fa-chevron-right {
+  font-size: 40px;
 }
