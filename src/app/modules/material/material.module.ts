@@ -8,7 +8,7 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import {
   MatRadioModule,
   MatRadioGroup,
-  MatRadioButton,
+  MatRadioButton
 } from '@angular/material/radio';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -55,7 +55,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     MatRadioModule,
     MatGridListModule,
     MatSelectModule,
-    MatTooltipModule,
+    MatTooltipModule
   ],
 
   exports: [
@@ -85,7 +85,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     MatRadioGroup,
     MatRadioButton,
     MatSelectModule,
-    MatTooltipModule,
-  ],
+    MatTooltipModule
+  ]
 })
 export class MaterialModule {}

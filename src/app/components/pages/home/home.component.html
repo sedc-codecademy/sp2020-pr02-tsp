@@ -63,6 +63,7 @@
         <h3 class="my-5 underlineBefore p-2">
           {{ 'HOMEPAGE.TOP_REVIEWED' | translate }}
         </h3>
+<<<<<<< HEAD
         <div class="owl-container">
           <owl-carousel-o [options]="customOptions">
             <ng-container *ngFor="let company of topThreeCompanies | slice: 0:3"
@@ -104,6 +105,34 @@
                       >{{ 'HOMEPAGE.SEE_MORE_BTN' | translate }}</a
                     >
                   </div>
+=======
+        <div class="reviewed-companies-container">
+          <div
+            *ngFor="let company of topThreeCompanies | slice: 0:3"
+            class="card mr-3 dark-bg"
+          >
+            <div class="card-header">
+              <a [routerLink]="['/companies', company?.name]">{{
+                company?.name
+              }}</a>
+            </div>
+            <div class="card-body">
+              <div class="card-aside">
+                <div class="img-fluid">
+                  <img src="{{ company?.logo }}" alt="{{ company?.name }}" />
+                </div>
+              </div>
+              <div class="reviewed-body">
+                <div class="icon-bundle">
+                  <h6>
+                    <i class="fa fa-map-marker mr-2"></i>{{ company?.location }}
+                  </h6>
+                  <h6 class="ml-2">
+                    <i class="fa fa-star mr-2"></i
+                    >{{ 'HOMEPAGE.AVERAGE' | translate }}:
+                    {{ company?.averageReview }}
+                  </h6>
+>>>>>>> master
                 </div>
               </ng-template>
             </ng-container>
@@ -114,6 +143,7 @@
     <h3 class="mt-home mb-3 underlineBefore p-2 reviews">
       {{ 'HOMEPAGE.REVIEWS' | translate }}
     </h3>
+<<<<<<< HEAD
     <section class="reviews-container">
       <app-review-element
         [@enterAnimation]
@@ -130,5 +160,18 @@
         matTooltipPosition="above"
       ></i>
     </div>
+=======
+    <app-review-element
+      class="my-3"
+      [reviewElement]="review"
+      *ngFor="let review of listOfReviews"
+    ></app-review-element>
+    <i
+      (click)="nextReviewPage()"
+      class="fa fa-chevron-circle-down mb-4 paginator"
+      matTooltip="{{ 'HOMEPAGE.LOADMORE' | translate }}"
+      matTooltipPosition="above"
+    ></i>
+>>>>>>> master
   </section>
 </section>
