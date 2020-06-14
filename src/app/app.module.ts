@@ -46,7 +46,7 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
     HttpLoaderComponent,
     TermsOfServiceComponent,
     FourOhFourComponent,
-    LandingPageComponent,
+    LandingPageComponent
   ],
   imports: [
     SharedModule,
@@ -65,9 +65,9 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
     ReactiveFormsModule,
     AngularFireDatabaseModule,
     LayoutModule,
-    ClickOutsideModule,
+    ClickOutsideModule
   ],
   providers: [],
-  bootstrap: [AppComponent],
+  bootstrap: [AppComponent]
 })
 export class AppModule {}

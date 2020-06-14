@@ -23,16 +23,6 @@ export class MyAccountComponent implements OnInit, OnDestroy {
   private toastrMessages;
   private subscription: Subscription;
 
-  public reviewPros: string;
-  public reviewCons: string;
-  public prosConsList = [
-    'Wage',
-    'Atmosphere',
-    'Working Conditions',
-    'Organization',
-    'Mentorship Program',
-  ];
-
   constructor(
     private reviewService: ReviewService,
     private companyService: CompanyService,
@@ -86,10 +76,7 @@ export class MyAccountComponent implements OnInit, OnDestroy {
       }
       review.userName = e.email;
       review.reportCounter = 0;
-<<<<<<< HEAD
 
-=======
->>>>>>> master
       this.reviewService
         .postReview(review)
         .then((response) => {

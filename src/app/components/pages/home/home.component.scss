@@ -2,12 +2,7 @@
 
 .main-section {
   overflow: hidden;
-  background-image: url('../../../../assets/Waves.png');
-  background-size: 1920px;
-  background-repeat: no-repeat;
-  background-position-y: -10rem;
-  background-attachment: fixed;
-
+  @extend .wavey-background;
   h1 {
     font-size: getFontSize(h1);
     @extend .underlineBefore;
@@ -97,8 +92,12 @@
 .featured-company-info {
   position: relative;
   padding-left: 2rem;
+  display: flex;
+  justify-content: space-between;
+  font-size: 26px;
   @include mediumPhoneMixin {
     padding-left: 1rem;
+    display: block;
   }
 }
 
@@ -109,7 +108,7 @@
   bottom: 0;
   height: 100%;
   width: 5px;
-  background-color: red;
+  background-color: #f44336;
 }
 
 .top-reviewed-companies {

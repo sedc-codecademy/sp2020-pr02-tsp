@@ -2,8 +2,8 @@
 
 .about-page {
   min-height: 100vh;
-  background: var(--font-color);
-  background: linear-gradient(180deg, var(--secondary), var(--primary));
+  background-color: var(--primary);
+  @extend .wavey-background;
   @include mediumPhoneMixin {
     padding-top: 25px;
   }
@@ -18,16 +18,25 @@
       margin-bottom: 2rem;
       position: relative;
       padding: 1rem;
+      font-weight: 200;
+      color: whitesmoke;
       @extend .underlineBefore;
       @include mediumPhoneMixin {
         font-size: 32px;
       }
       @include smallPhoneMixin {
         font-size: 26px;
+        margin: 2rem 0;
+        padding: 1rem 0;
       }
       @include ExtraLargeDesktopMixin {
         font-size: 72px;
       }
+    }
+
+    .title.page-title::before {
+      left: -48%;
+      background-color: whitesmoke;
     }
     .img-container {
       padding: 1rem;
@@ -50,4 +59,7 @@
 
 .mt-10 {
   margin-top: 10rem;
+  @include smallPhoneMixin {
+    margin-top: 5rem;
+  }
 }

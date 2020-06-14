@@ -86,7 +86,7 @@
       </mat-label>
       <input matInput formControlName="linkedInAccount" />
     </mat-form-field>
-    <button (click)="requestVerification()" mat-raised-button color="accent">
+    <button (click)="requestVerification()" mat-raised-button>
       {{ 'MY_ACCOUNT.CONNECT_BTN' | translate }}
     </button>
     <hr />
@@ -98,7 +98,7 @@
       </mat-label>
       <input matInput formControlName="changeEmailInput" />
     </mat-form-field>
-    <button (click)="changeEmail()" mat-raised-button color="accent">
+    <button (click)="changeEmail()" mat-raised-button>
       {{ 'MY_ACCOUNT.EMAIL_BTN' | translate }}
     </button>
     <hr />
@@ -117,7 +117,7 @@
       </mat-label>
       <input matInput formControlName="newPasswordConfirm" type="password" />
     </mat-form-field>
-    <button (click)="updatePassword()" mat-raised-button color="accent">
+    <button (click)="updatePassword()" mat-raised-button>
       {{ 'MY_ACCOUNT.CHANGE_PASS_BTN' | translate }}
     </button>
     <hr />
@@ -169,7 +169,7 @@
           >
             {{ 'CONFIRM_DIALOG.YES' | translate }}
           </button>
-          <button (click)="toggleAccountDel()" mat-raised-button color="accent">
+          <button (click)="toggleAccountDel()" mat-raised-button>
             {{ 'CONFIRM_DIALOG.CANCEL' | translate }}
           </button>
         </div>

@@ -26,8 +26,8 @@
 .div3 {
   grid-area: 5 / 3 / 7 / 6;
 }
-.body {
-  background: linear-gradient(180deg, var(--secondary), var(--primary));
+.body.parent {
+  @extend .wavey-background;
 }
 
 .dialog-container {
@@ -62,4 +62,8 @@ input:focus {
     margin-top: 1rem;
     margin-bottom: 2rem;
   }
+}
+
+mat-label {
+  color: var(--font-color);
 }
