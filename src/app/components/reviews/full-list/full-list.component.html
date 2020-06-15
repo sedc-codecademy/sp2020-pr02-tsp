@@ -1,7 +1,7 @@
 <section class="review-page mt-75">
   <section class="review-list">
-    <h1>{{ 'REVIEWS.ALL_REVIEWS' | translate }}</h1>
-    <div class="filter-field">
+    <h1 data-aos="fade-right">{{ 'REVIEWS.ALL_REVIEWS' | translate }}</h1>
+    <div class="filter-field" data-aos="fade-up">
       <form [formGroup]="reviewFilterGroup" (ngSubmit)="orderReviews()">
         <mat-form-field>
           <mat-label>{{ 'REVIEWS.FILTER' | translate }}</mat-label>
@@ -20,11 +20,13 @@
         </button>
       </form>
     </div>
-    <div class="review-container">
+    <div class="review-container" data-aos="fade">
       <app-review-element
+        data-aos="fade-right"
         class="review-item"
         [reviewElement]="review"
-        *ngFor="let review of listOfReviews"
+        *ngFor="let review of listOfReviews; let i = index"
+        [attr.data-aos-delay]="i % 2 === 0 ? 200 : 100"
       ></app-review-element>
     </div>
   </section>
