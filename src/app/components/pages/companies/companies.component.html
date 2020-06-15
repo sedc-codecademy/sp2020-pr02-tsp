@@ -1,12 +1,18 @@
 <section class="gradient-background mt-75 company-page">
-  <h1 class="underlineBefore">
+  <h1 class="underlineBefore" data-aos="fade-right">
     {{ 'COMPANIES_PAGE.TITLE' | translate }}
   </h1>
-  <div class="companies-wrapper container pb-5">
+  <div
+    class="companies-wrapper container pb-5"
+    data-aos="fade"
+    data-aos-delay="200"
+  >
     <app-component-list-item
+      data-aos="fade-right"
       class="mt-6 mx-auto"
       [ComponentListItem]="component"
-      *ngFor="let component of companyList"
+      *ngFor="let component of companyList; let i = index"
+      [attr.data-aos-delay]="200 + i * 15"
     >
     </app-component-list-item>
   </div>

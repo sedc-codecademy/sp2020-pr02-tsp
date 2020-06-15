@@ -5,6 +5,7 @@
   background-color: var(--primary);
   min-height: 100vh;
   color: var(--font-color);
+  overflow-x: hidden;
   h1 {
     font-size: getFontSize(h1);
     padding: 3rem 0;
@@ -22,6 +23,9 @@
     @include smallPhoneMixin {
       font-size: 26px;
     }
+  }
+  h1::before {
+    background-color: whitesmoke;
   }
   .companies-wrapper {
     margin-top: 5rem;
