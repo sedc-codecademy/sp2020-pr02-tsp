@@ -8,11 +8,11 @@ Check out our site at :
 
 ## The Submarine Team
 
-### Product Owner / Team Lead / DevOps
+### Product Owner, Team Lead, DevOps
 
 Antonij Djajkoski
 
-### QA, Scrum Master, Business Analyst
+### Lead QA, Scrum Master, Business Analyst
 
 Ivana Sokolova
 
