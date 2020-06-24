@@ -10,7 +10,7 @@ Check out our site at :
 
 ## The Submarine Team
 
-### Product Owner, Team Lead, DevOps
+### Product Owner, Team Lead, Lead Dev, DevOps
 
 Antonij Djajkoski
 
